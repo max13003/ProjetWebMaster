@@ -1,0 +1,2564 @@
+/* ===================================
+   STYLES GÉNÉRAUX
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+.social-links a {
+    text-decoration: none;
+}
+
+/* ===================================
+   NAVIGATION
+   =================================== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+nav li {
+    position: relative;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1.5rem;
+    transition: color 0.3s;
+    display: block;
+}
+
+nav > ul > li > a:hover {
+    color: #8b1b59;
+}
+
+/* Sous-menus */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    min-width: 220px;
+    padding: 0;
+    list-style: none;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    display: block;
+}
+
+.submenu a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap;
+}
+
+.submenu a:hover {
+    background: #8b1b59;
+    color: #fff;
+}
+
+/* Menu mobile */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #8b1b59;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+}
+/* Logo dans la navigation */
+nav .logo {
+    position: absolute;
+    left: 20px;
+    top: 5px;
+    height: 68px;
+    width: auto;
+    z-index: 1100;
+}
+
+/* Décale le menu pour éviter qu’il se chevauche avec le logo */
+nav ul {
+    padding-left: 120px; 
+}
+@media (max-width: 768px) {
+    nav .logo {
+        height: 40px;
+        left: 10px;
+        top: 10px;
+    }
+
+    nav ul {
+        padding-left: 0;
+    }
+}
+
+
+/* ===================================
+   SECTIONS
+   =================================== */
+section {
+    min-height: 100vh;
+    padding: 6rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section:nth-child(even) {
+    background: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.subsection {
+    margin-bottom: 2rem;
+    scroll-margin-top: 80px;
+    width: 100%;
+}
+
+/* ===================================
+   TYPOGRAPHIE
+   =================================== */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #8b1b59;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #8b1b59;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+#accueil p {
+    font-size: 20px;
+}
+
+/* ===================================
+   CARDS STANDARD
+   =================================== */
+.card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    width: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+section:nth-child(even) .card {
+    background: #fff;
+}
+
+/* ===================================
+   NOUVEAU STYLE - FORMATION
+   =================================== */
+
+/* Header avec dégradé */
+.formation-header {
+    background: linear-gradient(135deg, #8b1b59 0%, #a52a6f 100%);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.formation-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.formation-header h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.formation-header .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* Contenu avec sections colorées */
+.formation-content {
+    padding: 0;
+}
+
+.info-section {
+    padding: 3rem 2.5rem;
+    border-left: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.info-section:hover {
+    background: #fafafa;
+    border-left-color: #8b1b59;
+    transform: translateX(5px);
+}
+
+.info-section:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.info-section h4 {
+    color: #8b1b59;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-section h4::before {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(90deg, #8b1b59, #a52a6f);
+    border-radius: 2px;
+}
+
+/* Liste stylisée */
+.styled-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.styled-list li {
+    padding: 1rem 1rem 1rem 3rem;
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.styled-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #8b1b59, #a52a6f);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.styled-list li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 12px rgba(139, 27, 89, 0.2);
+}
+
+/* Stats boxes */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, #8b1b59 0%, #a52a6f 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(139, 27, 89, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: scale(1.05);
+}
+
+.stat-box .number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-box .label {
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+/* Divider stylisé */
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8b1b59, transparent);
+    margin: 3rem 0;
+    border: none;
+}
+
+/* Texte avec icônes */
+.icon-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.icon-text .icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #8b1b59, #a52a6f);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* Highlight box */
+.highlight-box {
+    background: linear-gradient(135deg, rgba(139, 27, 89, 0.1), rgba(165, 42, 111, 0.1));
+    border-left: 4px solid #8b1b59;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.highlight-box strong {
+    color: #8b1b59;
+}
+
+/* Cards en grille pour les débouchés */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.mini-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mini-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #8b1b59, #a52a6f);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.mini-card:hover {
+    border-color: #8b1b59;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(139, 27, 89, 0.15);
+}
+
+.mini-card:hover::before {
+    transform: scaleX(1);
+}
+
+.mini-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.mini-card h5 {
+    color: #8b1b59;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* ===================================
+   SECTIONS ENSEIGNEMENTS, COLLABORATION, ADMISSION, CERTIFICATION, ÉQUIPE & STAGE
+   =================================== */
+
+/* Headers avec dégradé pour Enseignements */
+.enseignements-header,
+.admission-header,
+.collaboration-header,
+.certification-header,
+.equipe-header,
+.stage-header {
+    background: linear-gradient(135deg, #8b1b59 0%, #a52a6f 100%);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.enseignements-header::before,
+.admission-header::before,
+.collaboration-header::before,
+.certification-header::before,
+.equipe-header::before,
+.stage-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.enseignements-header h3,
+.admission-header h3,
+.collaboration-header h3,
+.certification-header h3,
+.equipe-header h3,
+.stage-header h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.enseignements-header .subtitle,
+.admission-header .subtitle,
+.collaboration-header .subtitle,
+.certification-header .subtitle,
+.equipe-header .subtitle,
+.stage-header .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* Contenu */
+.enseignements-content,
+.admission-content,
+.collaboration-content,
+.certification-content,
+.equipe-content,
+.stage-content {
+    padding: 0;
+}
+
+/* Responsive pour ces sections */
+@media (max-width: 768px) {
+    .enseignements-header h3,
+    .admission-header h3,
+    .collaboration-header h3,
+    .certification-header h3,
+    .equipe-header h3,
+    .stage-header h3 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ===================================
+   logo COLLABORATION
+   =================================== */
+
+.logo-collab {
+    height: 30px;
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* ===================================
+   SECTION UNIVERSITÉ
+   =================================== */
+
+/* Header avec dégradé */
+.universite-header {
+    background: linear-gradient(135deg, #8b1b59 0%, #a52a6f 100%);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.universite-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.universite-header h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.universite-header .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* Contenu */
+.universite-content {
+    padding: 0;
+}
+
+/* Container pour la vidéo YouTube */
+.media-container {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+/* Container pour la carte Google Maps */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    margin: 2rem 0;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .universite-header h3 {
+        font-size: 1.8rem;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+
+    .video-wrapper {
+        padding-bottom: 75%;
+    }
+}
+
+/* ===================================
+   HERO ACCUEIL & CARROUSEL
+   =================================== */
+#accueil {
+    padding: 6rem 0 2rem 0;
+}
+
+#accueil .container {
+    max-width: 100%;
+    padding: 0;
+}
+
+.hero-text {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+}
+
+/* Carrousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+}
+
+.carousel-slide.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Boutons de navigation carrousel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* Indicateurs carrousel */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicator.active {
+    background: white;
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* ===================================
+   ACCORDÉONS
+   =================================== */
+.accordion-container {
+    margin-top: 2rem;
+}
+
+.accordion-item {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    background: #f8f8f8;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+.accordion-header:hover {
+    background: #8b1b59;
+    color: #fff;
+}
+
+.accordion-header.active {
+    background: #8b1b59;
+    color: #fff;
+}
+
+.accordion-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #fff;
+}
+
+.accordion-content.active {
+    max-height: 2000px;
+    transition: max-height 0.5s ease-in;
+}
+
+.accordion-content ul {
+    list-style: none;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    margin: 0;
+}
+
+.accordion-content li {
+    padding: 0.5rem 0;
+    padding-left: 0;
+    position: relative;
+    color: #555;
+    list-style: disc;
+    margin-left: 2rem;
+}
+
+/* Sous-listes dans les accordéons */
+.accordion-content ul ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    padding-left: 0;
+}
+
+.accordion-content ul ul li {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: 0;
+}
+
+/* Sous-accordéons */
+.sub-accordion {
+    margin: 0.5rem 1rem;
+    border: 1px solid #e0e0e0;
+}
+
+.sub-header {
+    background: #fafafa;
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+}
+
+.sub-header:hover {
+    background: #8b1b59;
+    color: #fff;
+}
+
+.sub-accordion .accordion-content {
+    background: #fff;
+}
+
+.sub-accordion .accordion-content ul {
+    padding: 1rem 1.2rem 0.5rem 1.2rem;
+}
+
+.sub-accordion .accordion-content li {
+    font-size: 0.95rem;
+    padding: 0.4rem 0;
+}
+
+/* ===================================
+   LAYOUT PROMOS ALUMNI
+   =================================== */
+.promo-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.promo-image {
+    flex: 0 0 400px;
+}
+
+.promo-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.promo-list {
+    flex: 1;
+}
+
+.promo-list ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 1rem;
+}
+
+.promo-list li {
+    padding: 0.3rem 0;
+}
+
+.promo-list a {
+    color: #8b1b59;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.promo-list a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* ===================================
+   SECTION DIRECTEUR
+   =================================== */
+.directeur-layout {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.directeur-photo {
+    flex: 0 0 250px;
+    text-align: center;
+}
+
+.directeur-photo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit:contain;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.directeur-photo h4 {
+    color: #8b1b59;
+    margin-bottom: 0.5rem;
+}
+
+.linkedin-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    background: #0077b5;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.linkedin-btn:hover {
+    background: #005885;
+}
+
+.directeur-message {
+    flex: 1;
+}
+
+.directeur-message p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* ===================================
+   FORMULAIRE CONTACT
+   =================================== */
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    width: 100%;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background: #8b1b59;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: grey;
+}
+
+/* ===================================
+   ANIMATIONS AU SCROLL
+   =================================== */
+.animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Délais d'animation pour créer un effet en cascade */
+.subsection p:nth-child(2).animate {
+    transition-delay: 0.1s;
+}
+
+.subsection p:nth-child(3).animate {
+    transition-delay: 0.2s;
+}
+
+.subsection ul.animate {
+    transition-delay: 0.3s;
+}
+
+.accordion-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.accordion-item:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.accordion-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.accordion-item:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav li {
+        display: block;
+    }
+
+    nav > ul > li > a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Sous-menus mobile */
+    .submenu {
+        position: static;
+        display: none;
+        box-shadow: none;
+        background: #f5f5f5;
+        padding-left: 1rem;
+    }
+
+    .dropdown.active .submenu {
+        display: block;
+    }
+
+    .submenu a {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 5rem 1rem 2rem;
+    }
+    
+    /* Responsive pour les promos */
+    .promo-layout {
+        flex-direction: column;
+    }
+    
+    .promo-image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    
+    .promo-list ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .carousel-slide img {
+        height: 250px;
+    }
+    
+    /* Responsive accordéons */
+    .accordion-header {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .sub-header {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    .sub-accordion {
+        margin: 0.5rem 0.5rem;
+    }
+
+    .sub-accordion .accordion-content li {
+        font-size: 0.95rem;
+        padding: 0.4rem 0;
+    }
+
+    /* Responsive section formation */
+    .formation-header h3 {
+        font-size: 1.8rem;
+    }
+    
+    .info-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Responsive directeur */
+    .directeur-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .directeur-photo {
+        flex: 0 0 auto;
+    }
+}
+
+
+/* Banner réseaux sociaux */
+.social-banner {
+    background: linear-gradient(135deg, #8b1b59 0%, #a52a6f 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.social-banner p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.social-links-asso {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.social-btn.linkedin {
+    background: #0077b5;
+}
+
+.social-btn.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-btn.facebook {
+    background: #1877F2;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.social-btn i {
+    font-size: 1.3rem;
+}
+
+/* Sections avec titre stylisé */
+.asso-section {
+    margin: 3rem 0;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.title-icon {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #8b1b59, #a52a6f);
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title h4 {
+    color: #8b1b59;
+    margin: 0;
+}
+
+/* Events list */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.event-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #8b1b59;
+    transition: all 0.3s ease;
+}
+
+.event-item:hover {
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: translateX(5px);
+}
+
+.event-emoji {
+    font-size: 2.5rem;
+}
+
+.event-info strong {
+    color: #8b1b59;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Features grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid #e9ecef;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+    border-color: #8b1b59;
+    box-shadow: 0 6px 20px rgba(139, 27, 89, 0.15);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-box h5 {
+    color: #8b1b59;
+    margin-bottom: 1rem;
+}
+
+/* Timeline événements */
+.timeline {
+    position: relative;
+    margin: 3rem 0;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #8b1b59 0%, #a52a6f 100%);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+    padding-left: 3rem;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 3px solid #8b1b59;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(139, 27, 89, 0.2);
+}
+
+.timeline-content {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #8b1b59;
+}
+
+.timeline-content h4 {
+    color: #8b1b59;
+    margin-bottom: 0.8rem;
+}
+
+/* CTA social */
+.cta-social {
+    margin-top: 2rem;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+    border: 2px solid #8b1b59;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.cta-box h4 {
+    color: #8b1b59;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.cta-box p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .association-hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .asso-card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .asso-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    .mission-grid,
+    .poles-grid,
+    .bureau-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        padding-left: 1rem;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        padding-left: 2rem;
+    }
+
+    .timeline-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+
+    .social-links-asso {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .social-btn {
+        justify-content: center;
+    }
+}
+/* Style Typographique pour les Missions */
+.mission-card.typo-style {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.mission-initial {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(139, 27, 89, 0.08);
+    line-height: 1;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.mission-text-content {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+}
+
+.mission-text-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #8b1b59;
+}
+
+/* event annuel */
+.section-header-simple {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+}
+
+.year-tag {
+    font-family: monospace;
+    color: #8b1b59;
+    border: 1px solid #8b1b59;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.9rem;
+    border-radius: 50px;
+}
+
+.section-header-simple h4 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+/* --- STYLE RESSOURCES (Revue & Annuaire) --- */
+
+.feature-box.minimal-box {
+    text-align: left;
+    padding: 2rem;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+/* Effet au survol : légère élévation et bordure bordeaux */
+.feature-box.minimal-box:hover {
+    transform: translateY(-5px);
+    border-color: #8b1b59;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* L'étiquette (Tag) en haut à gauche */
+.box-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #8b1b59;
+    background: rgba(139, 27, 89, 0.08);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Titre de la carte */
+.minimal-box h5 {
+    font-size: 1.4rem;
+    color: #222;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Texte descriptif */
+.minimal-box p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* poles etudiants */
+.pole-number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #e9ecef;
+    line-height: 1;
+    margin-bottom: -1rem;
+    position: relative;
+    z-index: 0;
+}
+
+.pole-header h4 {
+    position: relative;
+    z-index: 1;
+    color: #8b1b59;
+}
+
+/* ===================================
+   ICÔNES FONT AWESOME - STYLE
+   =================================== */
+
+/* Icône dans highlight-box */
+.highlight-box .highlight-icon {
+    margin-right: 0.5rem;
+    color: #8b1b59;
+}
+
+/* Espacements pour les icônes dans les headers */
+.accordion-header i {
+    margin-right: 0.8rem;
+}
+
+.info-section h4 i {
+    margin-right: 1rem;
+    color: #8b1b59;
+}
+
+/* Icônes dans les stat-box */
+.stat-box .number i {
+    font-size: 2.5rem;
+}
+
+/* Icônes dans mini-card */
+.mini-card .icon i {
+    font-size: 2.5rem;
+    color: #8b1b59;
+}
+
+/* Icônes dans icon-wrapper */
+.icon-wrapper i {
+    font-size: 1.2rem;
+}
+
+/* Icône dans le bouton CTA */
+.cta-button i {
+    margin-right: 0.5rem;
+}
+
+/* Animation des icônes au survol */
+.mini-card:hover .icon i {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* ===================================
+   BARRES DE PROGRESSION - QUALITÉ
+   =================================== */
+
+.quality-metrics {
+    margin: 2rem 0;
+}
+
+.metric-bar {
+    margin-bottom: 1.5rem;
+}
+
+.metric-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.metric-label span:first-child {
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.metric-value {
+    color: #8b1b59;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.progress-bar {
+    height: 12px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 10px;
+    animation: fillBar 1.5s ease-out forwards;
+    transform-origin: left;
+}
+
+@keyframes fillBar {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* ===================================
+   SECTION CLASSEMENT - STYLES VISUELS
+   =================================== */
+
+.classement-header {
+    background: linear-gradient(135deg, #8b1b59 0%, #a52a6f 100%);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.classement-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.classement-header h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.classement-header .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+.classement-content {
+    padding: 0;
+}
+
+.ranking-showcase {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+    border-radius: 15px;
+}
+
+.ranking-badge {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.badge-circle {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #8b1b59, #a52a6f);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(139, 27, 89, 0.4);
+    position: relative;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 10px 30px rgba(139, 27, 89, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(139, 27, 89, 0.6);
+    }
+}
+
+.badge-text {
+    text-align: center;
+    color: white;
+}
+
+.badge-label {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.badge-number {
+    display: block;
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.badge-subtitle {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #8b1b59;
+    font-size: 1.1rem;
+}
+
+.ranking-info {
+    flex: 1;
+}
+
+.ranking-info h4 {
+    color: #8b1b59;
+    margin-bottom: 1rem;
+}
+
+/* Timeline du classement */
+.ranking-timeline {
+    margin: 2rem 0;
+}
+
+.ranking-year {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.year-badge {
+    width: 80px;
+    height: 50px;
+    background: linear-gradient(135deg, #8b1b59, #a52a6f);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(139, 27, 89, 0.3);
+    flex-shrink: 0;
+}
+
+.year-bar {
+    flex: 1;
+    height: 50px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bar-fill {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    animation: slideIn 1.5s ease-out forwards;
+    transform-origin: left;
+}
+
+@keyframes slideIn {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.bar-label {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.criterion-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid #f0f0f0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.criterion-card:hover {
+    border-color: #8b1b59;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(139, 27, 89, 0.15);
+}
+
+.criterion-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.criterion-card h5 {
+    color: #8b1b59;
+    margin-bottom: 1rem;
+}
+
+.criterion-meter {
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8b1b59, #a52a6f);
+    border-radius: 10px;
+    animation: fillMeter 1.5s ease-out forwards;
+    transform-origin: left;
+}
+
+@keyframes fillMeter {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.criterion-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Liste des points forts */
+.strengths-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.strength-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    border-left: 4px solid #8b1b59;
+    transition: all 0.3s ease;
+}
+
+.strength-item:hover {
+    background: #f8f9fa;
+    transform: translateX(10px);
+    box-shadow: 0 4px 15px rgba(139, 27, 89, 0.1);
+}
+
+.strength-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #8b1b59, #a52a6f);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(139, 27, 89, 0.3);
+}
+
+.strength-content h5 {
+    color: #8b1b59;
+    margin-bottom: 0.5rem;
+}
+
+.strength-content p {
+    color: #666;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .classement-header h3 {
+        font-size: 1.8rem;
+    }
+
+    .ranking-showcase {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .badge-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .badge-number {
+        font-size: 4rem;
+    }
+
+    .ranking-year {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .year-badge {
+        width: 100%;
+    }
+
+    .criteria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .strength-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+
+footer {
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    color: #fff;
+    padding: 3rem 0 0;
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: #8b1b59;
+}
+
+.footer-logo {
+    height: 60px;
+    width: auto;
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer-section p i {
+    color: #8b1b59;
+    margin-right: 0.5rem;
+    width: 20px;
+}
+
+.footer-section a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #8b1b59;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    transform: translateX(5px);
+    color: #8b1b59;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: #8b1b59;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(139, 27, 89, 0.4);
+}
+
+.footer-bottom {
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.footer-legal {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: #8b1b59;
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 0.8rem;
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 2rem 0 0;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-legal {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+/* ===================================
+   NOUVEAU STYLE : PÔLES ÉTUDIANTS
+   =================================== */
+.poles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.pole-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e9ecef; /* Bordure plus fine */
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.pole-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-color: #8b1b59;
+}
+
+/* Conteneur Image du Pôle - MODIFIÉ */
+.pole-img-container {
+    width: 100%;
+    height: 500px; /* On augmente la hauteur (avant c'était 180px) */
+    overflow: hidden;
+    border-bottom: 4px solid #8b1b59;
+}
+
+.pole-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center; /* CRUCIAL : On force l'alignement sur le HAUT de l'image */
+    transition: transform 0.5s ease;
+}
+
+.pole-card:hover .pole-img-container img {
+    transform: scale(1.05); /* Zoom léger au survol */
+}
+
+/* Contenu Texte du Pôle */
+.pole-content {
+    padding: 1.5rem;
+    position: relative;
+}
+
+/* Numéro en filigrane (Option 1) */
+.pole-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(139, 27, 89, 0.1);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.pole-content h4 {
+    color: #8b1b59;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-right: 3rem; /* Pour ne pas chevaucher le numéro */
+}
+
+/* Liste des membres du pôle */
+.pole-members-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pole-members-list li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f9f9f9;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+.pole-members-list li:last-child {
+    border-bottom: none;
+}
+
+/* Badge role (Resp/Co-Resp) */
+.role-tag {
+    font-size: 0.75rem;
+    background: #f0f0f0;
+    color: #8b1b59;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ===================================
+   NOUVEAU STYLE : BUREAU (SPLIT LAYOUT)
+   =================================== */
+/* Conteneur principal bureau */
+.bureau-split-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Colonne Gauche : Image */
+.bureau-left-image {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.bureau-left-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Colonne Droite : Liste */
+.bureau-right-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+/* Ligne d'un membre */
+.membre-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.membre-item:hover {
+    border-color: #8b1b59;
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.membre-details h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.role-badge {
+    font-size: 0.85rem;
+    color: #8b1b59;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Séparateur pour les responsables promo */
+.bureau-separator {
+    margin: 2rem 0 1.5rem 0;
+    text-align: left;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+.bureau-separator h4 {
+    color: #333;
+    font-size: 1.1rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Petit bouton LinkedIn carré */
+.linkedin-btn-small {
+    width: 35px;
+    height: 35px;
+    background: #0077b5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.linkedin-btn-small:hover {
+    background: #005885;
+    transform: scale(1.1);
+}
+
+/* Responsive Bureau */
+@media (max-width: 768px) {
+    .bureau-split-container {
+        flex-direction: column;
+    }
+    .bureau-left-image, 
+    .bureau-right-list {
+        width: 100%;
+    }
+}
+
+/* ===================================
+   STYLES GÉNÉRAUX ASSOCIATION (HEADERS)
+   =================================== */
+
+.asso-card {
+    border: none;
+    overflow: visible; /* Changé de hidden à visible pour les ombres */
+    margin-bottom: 3rem;
+}
+
+/* NOUVEAU HEADER PROPRE (Clean Header) */
+.asso-card-header.clean-header {
+    background: white;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border-bottom: 2px solid #f5f5f5;
+    border-radius: 15px 15px 0 0; /* Arrondi seulement en haut */
+}
+
+/* Badge (Remplace les icônes rondes) */
+.amfa-badge {
+    background: #8b1b59;
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(139, 27, 89, 0.2);
+    white-space: nowrap;
+}
+
+.asso-card-header h3 {
+    color: #333;
+    margin: 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* Hero Section (Gardé tel quel car c'était bien) */
+.association-hero {
+    text-align: center;
+    padding: 2rem 2rem 3rem;
+    background: linear-gradient(135deg, #8b1b59 0%, #a52a6f 100%);
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 30px rgba(139, 27, 89, 0.3);
+}
+
+.association-hero h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+/* ===================================
+   SECTION PROMO "LUXE" (Clean Design)
+   =================================== */
+
+.promo-luxe-section {
+    padding: 5rem 2rem;
+    background: #ffffff; /* Fond blanc pur */
+    position: relative;
+}
+
+/* En-tête */
+.luxe-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.year-label {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 3px; /* Espacement des lettres très "Luxe" */
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.luxe-header h2 {
+    font-size: 2.5rem;
+    color: #8b1b59;
+    margin: 0;
+    font-family: serif; /* Police avec empattement pour l'élégance (optionnel) */
+}
+
+.title-separator {
+    width: 60px;
+    height: 3px;
+    background: #8b1b59;
+    margin: 1.5rem auto 0;
+}
+
+/* Le Cadre Photo */
+.promo-visual-frame {
+    max-width: 1000px;
+    margin: 0 auto 3rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15); /* Ombre douce et large */
+    border-radius: 4px; /* Coins très peu arrondis, plus sérieux */
+    overflow: hidden;
+}
+
+.promo-visual-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* La Liste des Noms Épurée */
+.promo-names-clean ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1100px;
+    
+    /* GRILLE INTELLIGENTE */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Colonnes auto */
+    gap: 1rem 2rem; /* Espace vertical 1rem, horizontal 2rem */
+    text-align: left;
+}
+
+.promo-names-clean li {
+    font-size: 1rem;
+    color: #444;
+    padding-left: 1rem;
+    border-left: 2px solid #f0f0f0; /* Petite ligne fine à gauche de chaque nom */
+    transition: all 0.3s ease;
+}
+
+/* Effet au survol du nom */
+.promo-names-clean li:hover {
+    border-left-color: #8b1b59; /* La ligne devient bordeaux */
+    color: #8b1b59;
+    padding-left: 1.5rem; /* Petit décalage vers la droite */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .promo-names-clean ul {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+    }
+    .luxe-header h2 {
+        font-size: 1.8rem;
+    }
+}
