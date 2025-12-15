@@ -1267,46 +1267,6 @@ button:hover {
     margin: 0;
 }
 
-/* Events list */
-.events-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.event-item {
-    display: flex;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    background: #f8f9fa;
-    border-radius: 12px;
-    border-left: 4px solid #8b1b59;
-    transition: all 0.3s ease;
-}
-
-.event-item:hover {
-    background: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transform: translateX(5px);
-}
-
-.event-emoji {
-    font-size: 2.5rem;
-}
-
-.event-info strong {
-    color: #8b1b59;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-/* Features grid */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
 .feature-box {
     background: white;
     padding: 2rem;
@@ -1329,57 +1289,6 @@ button:hover {
 .feature-box h5 {
     color: #8b1b59;
     margin-bottom: 1rem;
-}
-
-/* Timeline événements */
-.timeline {
-    position: relative;
-    margin: 3rem 0;
-    padding-left: 2rem;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, #8b1b59 0%, #a52a6f 100%);
-}
-
-.timeline-item {
-    position: relative;
-    padding-bottom: 2rem;
-    padding-left: 3rem;
-}
-
-.timeline-icon {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 50px;
-    height: 50px;
-    background: white;
-    border: 3px solid #8b1b59;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 10px rgba(139, 27, 89, 0.2);
-}
-
-.timeline-content {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 12px;
-    border-left: 4px solid #8b1b59;
-}
-
-.timeline-content h4 {
-    color: #8b1b59;
-    margin-bottom: 0.8rem;
 }
 
 /* CTA social */
@@ -1489,82 +1398,6 @@ button:hover {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: #8b1b59;
-}
-
-/* event annuel */
-.section-header-simple {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    margin-top: 3rem;
-}
-
-.year-tag {
-    font-family: monospace;
-    color: #8b1b59;
-    border: 1px solid #8b1b59;
-    padding: 0.2rem 0.6rem;
-    font-size: 0.9rem;
-    border-radius: 50px;
-}
-
-.section-header-simple h4 {
-    margin: 0;
-    font-size: 1.4rem;
-    color: #333;
-}
-
-/* --- STYLE RESSOURCES (Revue & Annuaire) --- */
-
-.feature-box.minimal-box {
-    text-align: left;
-    padding: 2rem;
-    background: white;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    transition: all 0.3s ease;
-    box-shadow: none;
-}
-
-/* Effet au survol : légère élévation et bordure bordeaux */
-.feature-box.minimal-box:hover {
-    transform: translateY(-5px);
-    border-color: #8b1b59;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-/* L'étiquette (Tag) en haut à gauche */
-.box-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    color: #8b1b59;
-    background: rgba(139, 27, 89, 0.08);
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-/* Titre de la carte */
-.minimal-box h5 {
-    font-size: 1.4rem;
-    color: #222;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-/* Texte descriptif */
-.minimal-box p {
-    color: #666;
-    font-size: 0.95rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
 }
 
 /* poles etudiants */
@@ -2446,27 +2279,6 @@ footer {
     text-transform: uppercase;
 }
 
-/* Hero Section (Gardé tel quel car c'était bien) */
-.association-hero {
-    text-align: center;
-    padding: 2rem 2rem 3rem;
-    background: linear-gradient(135deg, #8b1b59 0%, #a52a6f 100%);
-    color: white;
-    border-radius: 20px;
-    margin-bottom: 3rem;
-    box-shadow: 0 8px 30px rgba(139, 27, 89, 0.3);
-}
-
-.association-hero h2 {
-    color: white;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-    font-size: 1.2rem;
-    opacity: 0.95;
-}
 
 /* ===================================
    SECTION PROMO "LUXE" (Clean Design)
