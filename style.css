@@ -1389,8 +1389,7 @@ button:hover {
 
 .cta-box {
     background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
-    border: 2px solid #8b1b59;
-    border-radius: 20px;
+   
     padding: 2rem;
     text-align: center;
 }
@@ -2561,4 +2560,243 @@ footer {
     .luxe-header h2 {
         font-size: 1.8rem;
     }
+}
+
+
+
+/* ===================================
+   DESIGN ASSOCIATION "VIVANT & PRO"
+   =================================== */
+
+/* Fond gris léger pour faire ressortir les cartes blanches */
+.section-gray {
+    background-color: #f4f6f8;
+    padding: 5rem 1rem;
+}
+
+/* En-tête */
+.association-header-modern {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.association-header-modern h2 {
+    color: #8b1b59;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+.header-line {
+    width: 60px;
+    height: 4px;
+    background: #8b1b59;
+    margin: 0 auto 1.5rem;
+    border-radius: 2px;
+}
+.association-header-modern .hero-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Bloc Intro Principal */
+.asso-main-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    padding: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap; /* Responsive */
+    gap: 3rem;
+    border-top: 5px solid #8b1b59; /* Touche de couleur */
+}
+
+.asso-intro-text { flex: 2; min-width: 300px; }
+.asso-intro-text h3 { color: #333; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+.asso-intro-text h3 i { color: #8b1b59; }
+.asso-intro-text p { color: #555; line-height: 1.8; font-size: 1.05rem; }
+
+.asso-social-side {
+    flex: 1;
+    min-width: 250px;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.asso-social-side p { font-weight: 700; color: #8b1b59; margin-bottom: 1rem; }
+
+.social-buttons { display: flex; flex-direction: column; gap: 0.8rem; }
+.btn-social {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0.8rem 1.2rem;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+.btn-social:hover { transform: translateX(5px); border-color: #8b1b59; color: #8b1b59; }
+.btn-social i { font-size: 1.1rem; width: 20px; }
+
+/* Missions (3 colonnes) */
+.missions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+.mission-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+.mission-box:hover { transform: translateY(-10px); }
+.icon-circle {
+    width: 70px; height: 70px;
+    background: rgba(139, 27, 89, 0.1); /* Bordeaux transparent */
+    color: #8b1b59;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1.5rem;
+}
+.mission-box h4 { color: #333; margin-bottom: 0.5rem; font-size: 1.3rem; }
+
+/* Split Content (Events & Ressources) */
+.asso-split-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+.content-col { flex: 1; min-width: 300px; }
+.col-title {
+    font-size: 1.5rem; color: #333; margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 10px;
+    border-bottom: 2px solid #eee; padding-bottom: 1rem;
+}
+.col-title i { color: #8b1b59; }
+
+/* Info Cards (Events & Ressources items) */
+.event-cards-list, .resource-cards-list { display: flex; flex-direction: column; gap: 1rem; }
+
+.info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    transition: all 0.3s;
+}
+.info-card:hover {
+    border-left-color: #8b1b59;
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+.info-card h5 { font-size: 1.1rem; color: #222; margin-bottom: 0.5rem; font-weight: 700; }
+.info-card p { font-size: 0.95rem; color: #666; margin: 0; }
+
+/* Style spécifique pour Ressources (avec flèche) */
+.info-card.highlight .card-top {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;
+}
+.info-card.highlight h5 { margin: 0; color: #8b1b59; }
+.info-card.highlight i { color: #ccc; transition: 0.3s; }
+.info-card.highlight:hover i { color: #8b1b59; transform: translateX(5px); }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .asso-main-card { padding: 1.5rem; flex-direction: column; }
+    .asso-split-content { flex-direction: column; }
+}
+
+
+
+/* ===================================
+   RESPONSIVE (MOBILE) - CORRIGÉ
+   =================================== */
+@media (max-width: 768px) {
+    /* --- NAVIGATION --- */
+    nav {
+        height: 70px; /* Barre un peu plus fine sur mobile */
+    }
+    nav .logo {
+        height: 40px; /* Logo adapté */
+    }
+    nav ul { 
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 70px; /* Doit correspondre à la hauteur de nav */
+        left: 0; 
+        width: 100%; 
+        background: #fff; 
+        padding: 1rem; 
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1); 
+        text-align: center;
+    }
+    nav ul.active { display: flex; }
+    nav ul { padding-left: 0; }
+    .menu-toggle { display: block; top: 1rem; }
+    
+    /* --- FIX 1 : ESPACE HAUT DE PAGE & CENTRAGE TITRE --- */
+    #accueil {
+        /* On réduit l'espace haut (avant c'était 7rem/112px) */
+        padding-top: 6rem; 
+        padding-bottom: 1rem;
+        /* On force le centrage */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #accueil .container {
+        /* On s'assure que le conteneur prend toute la largeur pour centrer le texte */
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    #accueil h1 {
+        font-size: 1.8rem; /* Titre plus petit pour éviter les retours à la ligne moches */
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    #accueil p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* --- FIX 2 : CARROUSEL --- */
+    .carousel { 
+        height: 250px; /* Hauteur réduite pour que ça rentre dans l'écran */
+    }
+
+    /* --- FIX 3 : ESPACE ENTRE CARROUSEL ET PROMO --- */
+    /* On écrase le padding de 5rem défini pour l'ordi */
+    .promo-luxe-section {
+        padding-top: 2.5rem !important; 
+        padding-bottom: 2.5rem;
+    }
+
+    /* --- AUTRES AJUSTEMENTS --- */
+    .luxe-header h2 { font-size: 1.8rem; }
+    .formation-header h3 { font-size: 1.8rem; }
+    
+    .bureau-split-container, .directeur-layout, .promo-layout { flex-direction: column; }
+    .bureau-left-image, .bureau-right-list, .promo-image, .promo-list { width: 100%; }
+    .promo-list ul { grid-template-columns: 1fr; }
+    
+    .asso-main-card { padding: 1.5rem; flex-direction: column; }
+    .asso-split-content { flex-direction: column; }
+    
+    /* Pôles : Image moins haute sur mobile */
+    .pole-img-container { height: 200px; }
 }
