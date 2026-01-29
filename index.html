@@ -27,7 +27,7 @@
             <li class="dropdown">
                 <a href="#association">L'ASSOCIATION</a>
                 <ul class="submenu">
-                    <li><a href="#presentation-asso" onclick="closeMenu()">Présentation de l'Association</a></li>
+                    <li><a href="#association" onclick="closeMenu()">Présentation de l'Association</a></li>
                     <li><a href="#bureau" onclick="closeMenu()">Le Bureau</a></li>
                     <li><a href="#poles" onclick="closeMenu()">Les Pôles Étudiants</a></li>
                 </ul>
@@ -1165,19 +1165,19 @@
                             <div class="styled-list" style="margin-top: 1.5rem;">
                                 <ul style="list-style: none; padding: 0;">
                                     <li style="padding: 0.8rem 1rem 0.8rem 3rem; margin-bottom: 0.8rem; background: white; border-radius: 8px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                                        Droit des sociétés
+                                        &nbsp Droit des sociétés
                                     </li>
                                     <li style="padding: 0.8rem 1rem 0.8rem 3rem; margin-bottom: 0.8rem; background: white; border-radius: 8px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                                        Droit des obligations
+                                        &nbsp Droit des obligations
                                     </li>
                                     <li style="padding: 0.8rem 1rem 0.8rem 3rem; margin-bottom: 0.8rem; background: white; border-radius: 8px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                                        Droit fiscal
+                                        &nbsp Droit fiscal
                                     </li>
                                     <li style="padding: 0.8rem 1rem 0.8rem 3rem; margin-bottom: 0.8rem; background: white; border-radius: 8px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                                        Droit des contrats spéciaux
+                                        &nbsp Droit des contrats spéciaux
                                     </li>
                                     <li style="padding: 0.8rem 1rem 0.8rm 3rem; margin-bottom: 0.8rem; background: white; border-radius: 8px; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                                        Droit des biens
+                                        &nbsp Droit des biens
                                     </li>
                                 </ul>
                             </div>
@@ -1346,7 +1346,12 @@
                         </div>
                         <div class="promo-list">
                             <p><strong>Nos diplômés 2024-2025 :</strong></p>
-                            <ul>
+
+                            <button class="btn-toggle-promo" onclick="togglePromoList(this)">
+                                Voir la liste <i class="fas fa-chevron-down"></i>
+                            </button>
+
+                            <ul class="promo-list-hidden">
                                 <li>Victor BEDOUT</li>
                                 <li>Alexandre COUTANCE</li>
                                 <li>Theo CRIBALLET</li>
@@ -1389,7 +1394,12 @@
                         </div>
                         <div class="promo-list">
                             <p><strong>Nos diplômés 2023-2024 :</strong></p>
-                            <ul>
+
+                            <button class="btn-toggle-promo" onclick="togglePromoList(this)">
+                                Voir la liste <i class="fas fa-chevron-down"></i>
+                            </button>
+
+                            <ul class="promo-list-hidden">
                                 <li>Inès AHFIR</li>
                                 <li>Bailo BAH</li>
                                 <li>Léa BANY</li>
@@ -1422,7 +1432,7 @@
             </div>
                     
             <!-- Promo 2022 -->
-            <div id="promo2022" class="subsection">
+           <div id="promo2022" class="subsection">
                 <div class="card">
                     <h3>Promo 2022-2023</h3>
                     <div class="promo-layout">
@@ -1431,19 +1441,24 @@
                         </div>
                         <div class="promo-list">
                             <p><strong>Nos diplômés 2022-2023 :</strong></p>
-                            <ul>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Lisa Dupont</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Marc Martin</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Sophie Bernard</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Thomas Petit</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Julie Moreau</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Pierre Lambert</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Emma Rousseau</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Lucas Garnier</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Chloé Faure</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Hugo Vincent</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Léa Girard</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Alexandre Durand</a></li>
+                            
+                            <button class="btn-toggle-promo" onclick="togglePromoList(this)">
+                                Voir la liste <i class="fas fa-chevron-down"></i>
+                            </button>
+
+                            <ul class="promo-list-hidden">
+                                <li>Lisa Dupont</li>
+                                <li>Marc Martin</li>
+                                <li>Sophie Bernard</li>
+                                <li>Thomas Petit</li>
+                                <li>Julie Moreau</li>
+                                <li>Pierre Lambert</li>
+                                <li>Emma Rousseau</li>
+                                <li>Lucas Garnier</li>
+                                <li>Chloé Faure</li>
+                                <li>Hugo Vincent</li>
+                                <li>Léa Girard</li>
+                                <li>Alexandre Durand</li>
                             </ul>
                         </div>
                     </div>
@@ -1460,19 +1475,24 @@
                         </div>
                         <div class="promo-list">
                             <p><strong>Nos diplômés 2021-2022 :</strong></p>
-                            <ul>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Lisa Dupont</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Marc Martin</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Sophie Bernard</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Thomas Petit</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Julie Moreau</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Pierre Lambert</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Emma Rousseau</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Lucas Garnier</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Chloé Faure</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Hugo Vincent</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Léa Girard</a></li>
-                                <li><a href="https://fr.linkedin.com/in/..." target="_blank">Alexandre Durand</a></li>
+                            
+                            <button class="btn-toggle-promo" onclick="togglePromoList(this)">
+                                Voir la liste <i class="fas fa-chevron-down"></i>
+                            </button>
+
+                            <ul class="promo-list-hidden">
+                                <li>Lisa Dupont</li>
+                                <li>Marc Martin</li>
+                                <li>Sophie Bernard</li>
+                                <li>Thomas Petit</li>
+                                <li>Julie Moreau</li>
+                                <li>Pierre Lambert</li>
+                                <li>Emma Rousseau</li>
+                                <li>Lucas Garnier</li>
+                                <li>Chloé Faure</li>
+                                <li>Hugo Vincent</li>
+                                <li>Léa Girard</li>
+                                <li>Alexandre Durand</li>
                             </ul>
                         </div>
                     </div>

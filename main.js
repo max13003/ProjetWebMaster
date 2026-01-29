@@ -142,3 +142,23 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
+
+/* Gestion des listes déroulantes pour les Promos */
+function togglePromoList(button) {
+    // On cible la liste (ul) qui est juste après le bouton cliqué
+    const list = button.nextElementSibling;
+    
+    // On ajoute ou enlève la classe 'active' pour montrer/cacher
+    list.classList.toggle('active');
+    
+    // On change le texte du bouton selon l'état
+    if (list.classList.contains('active')) {
+        button.innerHTML = 'Masquer la liste <i class="fas fa-chevron-up"></i>';
+        button.style.backgroundColor = '#8b1b59'; // Fond bordeaux quand ouvert
+        button.style.color = '#fff';
+    } else {
+        button.innerHTML = 'Voir la liste <i class="fas fa-chevron-down"></i>';
+        button.style.backgroundColor = 'transparent'; // Fond transparent quand fermé
+        button.style.color = '#8b1b59';
+    }
+}

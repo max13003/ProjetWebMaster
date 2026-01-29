@@ -2612,3 +2612,267 @@ footer {
     /* Pôles : Image moins haute sur mobile */
     .pole-img-container { height: 200px; }
 }
+
+/* =========================================
+   CORRECTIF RESPONSIVE MOBILE (V3 - FINAL)
+   ========================================= */
+
+/* 1. SÉCURITÉ GLOBALE */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+/* 2. AJUSTEMENTS SPÉCIFIQUES MOBILE */
+@media (max-width: 768px) {
+    
+    /* --- A. EFFET "DÉZOOM" --- */
+    html {
+        font-size: 14px; 
+    }
+
+    /* --- B. GESTION DES ESPACES (Le correctif est ici) --- */
+    
+    /* Règle générale pour toutes les sections : compactes */
+    section {
+        padding-top: 3rem !important; 
+        padding-bottom: 2rem !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        min-height: auto !important;
+    }
+
+    /* EXCEPTION POUR L'ACCUEIL : On pousse fort vers le bas pour sortir du menu */
+    #accueil {
+        padding-top: 8rem !important; /* ~110px, pour passer sous la barre de menu */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Aligne le contenu vers le haut */
+    }
+    
+    .container {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* --- C. CORRECTION IMAGES PÔLES --- */
+    .pole-img-container {
+        height: auto !important;
+        width: 100% !important;
+        border-bottom: 2px solid #8b1b59;
+    }
+
+    .pole-img-container img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        transform: none !important;
+    }
+
+    /* --- D. SÉCURITÉS DIVERSES --- */
+    nav ul {
+        width: 100vw;
+        left: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .carousel, .carousel-container, .carousel-slide {
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+
+    /* Ajuste la taille des titres */
+    h1 { font-size: 1.8rem !important; word-wrap: break-word; margin-top: 0 !important; }
+    h2 { font-size: 1.5rem !important; word-wrap: break-word; }
+    h3 { font-size: 1.3rem !important; word-wrap: break-word; }
+}
+
+/* =========================================
+   CORRECTIF VISUEL : CLASSEMENT SMBG MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* 1. On empile le rond et le texte au lieu de les mettre côte à côte */
+    .ranking-showcase {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 1.5rem !important; /* Moins de marge intérieure */
+        gap: 1.5rem !important; /* Espace propre entre le rond et le texte */
+    }
+
+    /* 2. On réduit la taille du rond bordeaux (qui est trop gros de base) */
+    .badge-circle {
+        width: 140px !important;
+        height: 140px !important;
+        margin: 0 auto !important; /* Force le centrage */
+    }
+
+    /* 3. On ajuste la taille du chiffre "10" */
+    .badge-number {
+        font-size: 3.5rem !important;
+        line-height: 1 !important;
+    }
+
+    /* 4. On réduit un peu le label "TOP" */
+    .badge-label {
+        font-size: 1.2rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* 5. On s'assure que le sous-titre ne colle pas */
+    .badge-subtitle {
+        margin-top: 1rem !important;
+        font-size: 1rem !important;
+    }
+
+    /* 6. Ajustement du texte explicatif à droite (maintenant en dessous) */
+    .ranking-info h4 {
+        margin-top: 0.5rem !important;
+        font-size: 1.3rem !important;
+    }
+}
+
+/* =========================================
+   ATTENTION : À COLLER TOUT EN BAS DU FICHIER
+   EN DEHORS DE TOUTES LES ACCOLADES { }
+   ========================================= */
+
+/* --- Style du bouton "Voir la liste" --- */
+.btn-toggle-promo {
+    background-color: transparent;
+    border: 2px solid #8b1b59;
+    color: #8b1b59;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-toggle-promo:hover {
+    background-color: #8b1b59;
+    color: white;
+}
+
+/* --- LE SECRET EST ICI : Cacher la liste par défaut --- */
+/* Cette partie doit s'appliquer PARTOUT (pas que sur mobile) */
+.promo-list-hidden {
+    display: none !important; /* On force le masquage */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* --- Style quand la liste est ouverte (via le Javascript) --- */
+.promo-list-hidden.active {
+    display: block !important; /* On force l'affichage */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   AJUSTEMENT IMAGES BUREAU (VERSION PC)
+   ========================================= */
+
+/* On applique cela uniquement sur les écrans d'ordinateur (plus de 768px) */
+@media (min-width: 769px) {
+    
+    /* On cible le conteneur de l'image dans la section bureau */
+    #bureau .bureau-left-image {
+        max-width: 350px; /* Réduit la largeur (ajustez 350px selon vos goûts) */
+        flex: 0 0 350px; /* Force la colonne à ne pas dépasser cette taille */
+    }
+
+    /* On s'assure que l'image remplit bien ce nouveau petit conteneur */
+    #bureau .bureau-left-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px; /* Un petit arrondi pour l'esthétique */
+    }
+    /* Force les boîtes "Nom + Rôle" à être moins larges */
+    #bureau .membre-item {
+        max-width: 280px !important; /* Limite la largeur (ajustez si besoin) */
+        width: 100% !important;      /* Prend la place dispo jusqu'au max */
+    }
+
+    /* Optionnel : Si vous voulez que la liste soit collée à l'image */
+    #bureau .bureau-right-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Aligne les boîtes à gauche */
+        justify-content: center;
+}
+}
+
+/* =========================================
+   AJUSTEMENT FINAL BUREAU (CENTRÉ & COMPACT)
+   ========================================= */
+
+@media (min-width: 769px) {
+
+    /* 1. On centre tout le groupe (Image + Liste) au milieu de la page */
+    .bureau-split-container {
+        justify-content: center !important; /* Centre horizontalement */
+        gap: 2rem !important; /* Espace entre l'image et la liste */
+    }
+
+    /* 2. L'image : taille fixe et maîtrisée */
+    #bureau .bureau-left-image {
+        max-width: 300px !important; /* Largeur de l'image */
+        flex: 0 0 300px !important;  /* Empêche l'image de changer de taille */
+    }
+
+    #bureau .bureau-left-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    /* 3. La liste de droite : on centre les rectangles à l'intérieur */
+    .bureau-right-list {
+        flex: 0 1 auto !important; /* La colonne prend juste la place nécessaire */
+        display: flex;
+        flex-direction: column;
+        align-items: center !important; /* Centre les rectangles (horizontalement) */
+        justify-content: center;        /* Centre verticalement par rapport à l'image */
+    }
+
+    /* 4. Les Rectangles (Noms) : taille fixe et centrés */
+    #bureau .membre-item {
+        width: 260px !important; /* Force une largeur identique pour tous */
+        max-width: 260px !important;
+        padding: 0.5rem 1rem !important;
+        margin-bottom: 0.6rem !important;
+        min-height: auto !important;
+        /* Pour centrer le texte à l'intérieur du rectangle si vous le souhaitez : */
+        /* justify-content: center; */ 
+    }
+
+    /* --- Styles "Mini" pour le texte (comme demandé avant) --- */
+    #bureau .membre-details h4 {
+        font-size: 0.95rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    #bureau .role-badge {
+        font-size: 0.7rem !important;
+        padding: 1px 6px !important;
+    }
+
+    #bureau .linkedin-btn-small {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.8rem !important;
+    }
+}
+
