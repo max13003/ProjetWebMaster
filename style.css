@@ -1417,6 +1417,36 @@ button:hover {
     color: #8b1b59;
 }
 
+/* --- Style des listes Pôles avec LinkedIn --- */
+.pole-members-list li {
+    display: flex;               /* Active l'alignement horizontal */
+    justify-content: space-between; /* Nom à gauche, LinkedIn à droite */
+    align-items: center;         /* Centre verticalement */
+    padding: 0.6rem 0;           /* Un peu plus d'espace pour cliquer */
+}
+
+/* La petite pastille LinkedIn */
+.linkedin-mini {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;                /* Taille discrète */
+    height: 26px;
+    background-color: #0077b5;  /* Bleu LinkedIn */
+    color: white;
+    border-radius: 50%;         /* Rond parfait */
+    font-size: 0.8rem;          /* Icône petite */
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-left: 10px;
+}
+
+.linkedin-mini:hover {
+    background-color: #005885;  /* Bleu plus fonce au survol */
+    transform: scale(1.15);     /* Léger zoom */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
 /* ===================================
    ICÔNES FONT AWESOME - STYLE
    =================================== */
@@ -2876,3 +2906,394 @@ html, body {
     }
 }
 
+/* --- Logos Partenaires (HEC / INSEEC) --- */
+.school-partners-logos {
+    display: flex;
+    justify-content: center; /* Centre les logos horizontalement */
+    align-items: center;     /* Centre les logos verticalement */
+    gap: 40px;               /* Espace entre les deux logos */
+    margin-bottom: 30px;     /* Espace sous les logos avant la suite */
+    padding: 10px;
+}
+
+.school-partners-logos img {
+    height: 120px;            /* Hauteur fixe pour qu'ils aient la même taille */
+    width: auto;             /* La largeur s'adapte auto */
+    object-fit: contain;
+    filter: grayscale(100%); /* Optionnel : Met les logos en gris pour faire "classe" */
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+/* Au survol de la souris, on remet les couleurs */
+.school-partners-logos img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Sur mobile, on réduit un peu la taille */
+@media (max-width: 768px) {
+    .school-partners-logos img {
+        height: 60px;
+        gap: 20px;
+    }
+}
+
+/* --- Zone Téléchargement PDF --- */
+.pdf-download-zone {
+    background: #fafafa;
+    border: 2px dashed #8b1b59; /* Bordure en pointillés couleur Master */
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin: 2.5rem auto;
+    max-width: 600px;
+    transition: all 0.3s ease;
+}
+
+.pdf-download-zone:hover {
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(139, 27, 89, 0.15);
+    transform: translateY(-5px);
+}
+
+.pdf-icon-large {
+    font-size: 4rem;
+    color: #8b1b59;
+    margin-bottom: 1rem;
+}
+
+.pdf-download-zone h4 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-download-pdf {
+    display: inline-block;
+    background: #8b1b59;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(139, 27, 89, 0.3);
+}
+
+.btn-download-pdf:hover {
+    background: #6d1546;
+    transform: scale(1.05);
+}
+
+.btn-download-pdf i {
+    margin-right: 8px;
+}
+
+/* =========================================
+   STYLE GREEN SANCTUARIES (VERSION FINALE)
+   ========================================= */
+
+/* 1. L'En-tête Vert (Structure + Couleur) */
+.green-header {
+    background: linear-gradient(135deg, #2d5a27 0%, #4a8c42 100%);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+}
+
+.green-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.green-header h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.green-header .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* 2. Le Bouton Vert */
+.btn-green {
+    display: inline-block;
+    background: #2d5a27;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3);
+}
+
+.btn-green:hover {
+    background: #1e3d1a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(45, 90, 39, 0.4);
+}
+
+/* 3. FORÇAGE DES COULEURS (Anti-Violet) */
+
+/* Titres H4 en vert */
+#green-sanctuaries .info-section h4 {
+    color: #2d5a27 !important;
+}
+
+/* Icônes dans les titres */
+#green-sanctuaries .info-section h4 i {
+    color: #2d5a27 !important;
+}
+
+/* Ligne sous les titres */
+#green-sanctuaries .info-section h4::before {
+    background: linear-gradient(90deg, #2d5a27, #4a8c42) !important;
+}
+
+/* Boîte de mise en avant (Highlight Box) */
+#green-sanctuaries .highlight-box {
+    border-left-color: #2d5a27 !important;
+    background: rgba(45, 90, 39, 0.05) !important;
+}
+
+/* Texte gras dans la boîte */
+#green-sanctuaries .highlight-box strong {
+    color: #2d5a27 !important;
+}
+
+/* Séparateurs */
+#green-sanctuaries hr.divider {
+    background: linear-gradient(90deg, transparent, #2d5a27, transparent) !important;
+}
+
+/* Bord gauche au survol de la souris */
+#green-sanctuaries .info-section:hover {
+    border-left-color: #2d5a27 !important;
+}
+/* --- CORRECTIF MINI-CARTES GREEN SANCTUARIES --- */
+
+/* 1. L'icône et le titre en vert */
+#green-sanctuaries .mini-card .icon i,
+#green-sanctuaries .mini-card h5 {
+    color: #2d5a27 !important;
+}
+
+/* 2. La barre animée au-dessus de la carte (le trait qui s'étend) */
+#green-sanctuaries .mini-card::before {
+    background: linear-gradient(90deg, #2d5a27, #4a8c42) !important;
+}
+
+/* 3. La bordure de la carte au survol */
+#green-sanctuaries .mini-card:hover {
+    border-color: #2d5a27 !important;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .green-header h3 {
+        font-size: 1.8rem;
+    }
+}
+
+/* --- STYLE THE BENCH (VERSION BLEUE) --- */
+
+/* En-tête Bleu Startup (Dégradé Bleu Roi vers Bleu Clair) */
+.bench-header {
+    background: linear-gradient(135deg, #004085 0%, #0d6efd 100%);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Rond décoratif en fond */
+.bench-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.bench-header h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.bench-header .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* Correction Spéciale : Highlight Box en BLEU (Écrase le violet) */
+.highlight-box.bench-highlight {
+    background: rgba(13, 110, 253, 0.05); /* Fond bleu très clair */
+    border-left: 4px solid #0d6efd;       /* Bordure bleue */
+}
+
+/* C'est ICI que ça se joue : on force le texte gras en bleu */
+.highlight-box.bench-highlight strong {
+    color: #0d6efd !important; 
+}
+
+/* Conteneur des programmes */
+.programs-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.program-step {
+    flex: 1;
+    min-width: 280px;
+    background: white;
+    border: 2px solid #e7f1ff;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.program-step:hover {
+    border-color: #0d6efd;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.15);
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 1rem;
+}
+
+.program-step h5 {
+    color: #004085;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.step-label {
+    display: inline-block;
+    background: #cfe2ff;
+    color: #084298;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Flèche de transition */
+.step-arrow {
+    font-size: 1.5rem;
+    color: #0d6efd;
+    opacity: 0.5;
+}
+
+/* Bouton The Bench */
+.btn-bench {
+    display: inline-block;
+    background: #0d6efd;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+}
+
+.btn-bench:hover {
+    background: #0b5ed7;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .programs-container {
+        flex-direction: column;
+    }
+    .step-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+    .bench-header h3 {
+        font-size: 1.8rem;
+    }
+}
+/* --- CORRECTIF FINAL : THE BENCH 100% BLEU --- */
+
+/* 1. Le titre H4 (Innover pour la société...) */
+#the-bench .info-section h4 {
+    color: #0d6efd !important; /* Force le bleu */
+}
+
+/* 2. L'icône dans le titre (La fusée) */
+#the-bench .info-section h4 i {
+    color: #0d6efd !important;
+}
+
+/* 3. La petite ligne sous le titre (C'était elle la fautive !) */
+#the-bench .info-section h4::before {
+    background: linear-gradient(90deg, #0d6efd, #0a58ca) !important;
+}
+
+/* 4. La boîte de mise en avant (Highlight Box) */
+#the-bench .highlight-box {
+    border-left-color: #0d6efd !important;
+    background: rgba(13, 110, 253, 0.05) !important;
+}
+
+/* 5. Le texte en gras dans la boîte */
+#the-bench .highlight-box strong {
+    color: #0d6efd !important;
+}
+
+/* 6. Les séparateurs (lignes horizontales) */
+#the-bench hr.divider {
+    background: linear-gradient(90deg, transparent, #0d6efd, transparent) !important;
+}
+/* --- ULTIME CORRECTION : LE BORD GAUCHE AU SURVOL --- */
+#the-bench .info-section:hover {
+    border-left-color: #0d6efd !important; /* Force le BLEU au survol */
+}
