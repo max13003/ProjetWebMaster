@@ -19,7 +19,9 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <img src="images/LogoEcole.png" alt="Logo M&A" class="logo">
+        <a href="#" class="logo-link">
+            <img src="images/LogoEcole.png" alt="Logo M&A" class="logo">
+        </a>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <ul id="menu">
             <li><a href="#accueil" onclick="closeMenu()">ACCUEIL</a></li>
@@ -87,8 +89,8 @@
             <div class="carousel-container">
                 <div class="carousel-slide active">
                     <picture>
-                        <source media="(max-width: 768px)" srcset="images/Wagram-mobile.gif">
-                        <img src="images/Wagram.png" alt="Wagram">
+                        <source media="(max-width: 768px)" srcset="images/antoine-fievet.jpg">
+                        <img src="images/antoine-fievet.jpg" alt="Antoine-Fievet">
                     </picture>
                 </div>
                 <div class="carousel-slide">
@@ -110,6 +112,12 @@
                     </picture>
                 </div>
             </div>
+            <div class="carousel-slide">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="images/Wagram-mobile.gif">
+                        <img src="images/Wagram.png" alt="Wagram">
+                    </picture>
+                </div>
             
             <!-- Contrôles -->
             <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
@@ -121,6 +129,7 @@
                 <span class="indicator" onclick="goToSlide(1)"></span>
                 <span class="indicator" onclick="goToSlide(2)"></span>
                 <span class="indicator" onclick="goToSlide(3)"></span>
+                <span class="indicator" onclick="goToSlide(4)"></span>
             </div>
         </div>
     </section>
@@ -131,7 +140,7 @@
         
         <div class="luxe-header">
             <span class="year-label">2025-2026</span>
-            <h2>Antoine Fievet</h2>
+            <h2>Promotion Antoine Fievet</h2>
             <div class="title-separator"></div>
         </div>
 
@@ -244,13 +253,14 @@
             <div class="content-col">
                 <h3 class="col-title"><i class="fas fa-book"></i> Revue juridique & annuaire</h3>
                 <div class="resource-cards-list">
-                    <div class="info-card highlight">
+                    
+                    <a href="revue.html" class="info-card highlight" style="text-decoration: none; display: block; color: inherit;">
                         <div class="card-top">
                             <h5>Revue Juridique</h5>
                             <i class="fas fa-arrow-right"></i>
                         </div>
                         <p>Un espace d'expression d'excellence pour publier vos articles sur l'actualité du droit des affaires.</p>
-                    </div>
+                    </a>
                     <div class="info-card highlight">
                         <div class="card-top">
                             <h5>Annuaire Alumni</h5>
@@ -1862,7 +1872,7 @@
                     <h4>Contact</h4>
                     <p><i class="fas fa-map-marker-alt"></i> 23 Bd François Mitterrand, <br>91000 Évry-Courcouronnes</p>
                     <p><i class="fas fa-phone"></i> 01.69.15.67.50</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:christophe.gerschel@univ-evry.fr">christophe.gerschel@univ-evry.fr</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:m2fusac2025@gmail.com">m2fusac2025@gmail.com</a></p>
                 </div>
 
                 <div class="footer-section">
