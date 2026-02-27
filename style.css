@@ -131,6 +131,30 @@ nav ul {
 
     nav ul {
         padding-left: 0;
+        
+        /* 1. On force les liens à s'empiler proprement de haut en bas */
+        flex-direction: column;
+        flex-wrap: nowrap;
+        
+        /* 2. Le système de scroll */
+        max-height: calc(100vh - 60px); 
+        overflow-y: auto; 
+        -webkit-overflow-scrolling: touch; 
+        padding-bottom: 2rem; 
+    }
+
+    /* --- LA MAGIE EST ICI --- */
+    .submenu {
+        position: relative; /* Au lieu de absolute : ça pousse les autres liens vers le bas ! */
+        top: 0;
+        width: 100%;
+        box-shadow: none; /* On enlève l'ombre qui fait bizarre sur mobile */
+        background: #fdfdfd; /* Un fond très légèrement gris pour différencier les sous-menus */
+    }
+
+    /* On décale un peu les sous-liens vers la droite pour bien voir que c'est un sous-menu */
+    .submenu a {
+        padding-left: 2.5rem; 
     }
 }
 
@@ -691,7 +715,6 @@ section:nth-child(even) .card {
 
 .carousel-slide.active {
     display: block;
-    animation: fadeIn 0.5s;
 }
 
 .carousel-slide img {
@@ -3117,6 +3140,121 @@ html, body {
 @media (max-width: 768px) {
     .green-header h3 {
         font-size: 1.8rem;
+    }
+}
+
+/* =========================================
+   IMAGES GREEN SANCTUARIES & MISSIONS (ORDINATEUR)
+   ========================================= */
+
+.green-image-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 3rem auto 1rem;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(45, 90, 39, 0.15);
+    border: 4px solid #ffffff;
+    position: relative;
+}
+
+.green-feature-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.green-image-container:hover .green-feature-img {
+    transform: scale(1.05);
+}
+
+.missions-image-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 4rem auto 3rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.missions-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center 80%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.missions-image-wrapper:hover .missions-img {
+    transform: scale(1.03);
+}
+
+/* =========================================
+   RESPONSIVE MOBILE (POUR TOUTE LA SECTION)
+   ========================================= */
+
+/* Sécurité pour que les images ne débordent jamais */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    /* Ajustement de la section pour donner de l'air */
+    #green-sanctuaries .info-section {
+        padding: 0 15px; 
+    }
+
+    /* Le bandeau "Missions" */
+    .missions-image-wrapper {
+        margin: 2rem 0; 
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    .missions-img {
+        height: 180px !important; 
+        object-fit: cover; 
+        object-position: center; 
+    }
+
+    /* La grille des missions en 1 colonne sur téléphone */
+    #green-sanctuaries .cards-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 1.5rem;
+    }
+
+    #green-sanctuaries .mini-card {
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+    }
+
+    /* Le bouton plus facile à cliquer au doigt */
+    #green-sanctuaries .btn-green {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+        margin-top: 2rem;
+        box-sizing: border-box; /* Évite que le bouton dépasse de l'écran */
+    }
+
+    /* L'image de la jungle en bas */
+    .green-image-container {
+        margin: 2rem 0 0; 
+        border-radius: 8px;
+        border-width: 2px;
+        width: 100%;
+    }
+
+    .green-feature-img {
+        height: 200px !important;
+        object-fit: cover;
     }
 }
 

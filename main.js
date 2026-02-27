@@ -1,9 +1,113 @@
-// Fonction pour gérer les accordéons
+// ===================================
+// GESTION DU MENU MOBILE (ACCORDÉON)
+// ===================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialisation du carrousel au chargement
+    startAutoSlide();
+    
+    // Gestion des liens de menus déroulants (Dropdowns)
+    const dropdowns = document.querySelectorAll('.dropdown > a');
+    
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', (e) => {
+            // Uniquement sur mobile/tablette
+            if (window.innerWidth <= 768) {
+                e.preventDefault(); // Empêche de sauter à la section tout de suite
+                
+                const parent = dropdown.parentElement;
+                const currentSubmenu = parent.querySelector('.submenu');
+                
+                // --- EFFET ACCORDÉON ---
+                // On ferme TOUS les autres dropdowns ouverts avant d'ouvrir celui-ci
+                document.querySelectorAll('.dropdown').forEach(otherDropdown => {
+                    if (otherDropdown !== parent) {
+                        otherDropdown.classList.remove('active');
+                        const otherSub = otherDropdown.querySelector('.submenu');
+                        if (otherSub) otherSub.style.display = 'none';
+                    }
+                });
+
+                // --- TOGGLE DU MENU ACTUEL ---
+                const isActive = parent.classList.toggle('active');
+                
+                // On affiche ou cache le sous-menu
+                if (isActive) {
+                    currentSubmenu.style.display = 'block';
+                } else {
+                    currentSubmenu.style.display = 'none';
+                }
+            }
+        });
+    });
+
+    // Animation au scroll (Intersection Observer)
+    const elementsToAnimate = document.querySelectorAll('.card, .subsection h3, .subsection p, .subsection ul, .accordion-item');
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    elementsToAnimate.forEach(el => {
+        el.classList.add('animate');
+        observer.observe(el);
+    });
+});
+
+// ===================================
+// FONCTIONS DE NAVIGATION
+// ===================================
+
+// Toggle l'ouverture du menu mobile entier
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('active');
+}
+
+// Fermer le menu après clic sur un lien final
+function closeMenu() {
+    const menu = document.getElementById('menu');
+    if (window.innerWidth <= 768) {
+        menu.classList.remove('active');
+        // On remet tous les sous-menus à zéro pour la prochaine ouverture
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+            const sub = dropdown.querySelector('.submenu');
+            if (sub) sub.style.display = 'none';
+        });
+    }
+}
+
+// Sécurité : Fermer le menu si on agrandit la fenêtre
+window.addEventListener('resize', () => {
+    const menu = document.getElementById('menu');
+    if (window.innerWidth > 768) {
+        menu.classList.remove('active');
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+            const sub = dropdown.querySelector('.submenu');
+            if (sub) sub.style.display = 'none';
+        });
+    }
+});
+
+// ===================================
+// FONCTIONS DES SECTIONS (ACCORDÉONS & PROMOS)
+// ===================================
+
+// Accordéons classiques (ex: Enseignements)
 function toggleAccordion(button) {
     const content = button.nextElementSibling;
     const isActive = button.classList.contains('active');
     
-    // Fermer tous les accordéons du même niveau
     const parent = button.closest('.accordion-item').parentElement;
     const siblings = parent.querySelectorAll(':scope > .accordion-item > .accordion-header');
     
@@ -14,7 +118,6 @@ function toggleAccordion(button) {
         }
     });
     
-    // Toggle l'accordéon cliqué
     if (isActive) {
         button.classList.remove('active');
         content.classList.remove('active');
@@ -24,32 +127,26 @@ function toggleAccordion(button) {
     }
 }
 
-// Toggle menu mobile
-function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.classList.toggle('active');
-}
-
-// Fermer le menu après clic sur un lien
-function closeMenu() {
-    const menu = document.getElementById('menu');
-    if (window.innerWidth <= 768) {
-        menu.classList.remove('active');
-        // Fermer tous les sous-menus
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-            dropdown.classList.remove('active');
-        });
+// Listes des Promos Alumnis
+function togglePromoList(button) {
+    const list = button.nextElementSibling;
+    list.classList.toggle('active');
+    
+    if (list.classList.contains('active')) {
+        button.innerHTML = 'Masquer la liste <i class="fas fa-chevron-up"></i>';
+        button.style.backgroundColor = '#8b1b59';
+        button.style.color = '#fff';
+    } else {
+        button.innerHTML = 'Voir la liste <i class="fas fa-chevron-down"></i>';
+        button.style.backgroundColor = 'transparent';
+        button.style.color = '#8b1b59';
     }
 }
 
-// Gérer la soumission du formulaire
-function handleSubmit(event) {
-    event.preventDefault();
-    alert('Message envoyé !');
-    event.target.reset();
-}
+// ===================================
+// CARROUSEL & FORMULAIRE
+// ===================================
 
-// Variables du carrousel
 let currentSlide = 0;
 let autoSlideInterval;
 
@@ -64,7 +161,6 @@ function changeSlide(direction) {
     
     slides[currentSlide].classList.add('active');
     indicators[currentSlide].classList.add('active');
-
     resetAutoSlide();
 }
 
@@ -79,7 +175,6 @@ function goToSlide(index) {
     
     slides[currentSlide].classList.add('active');
     indicators[currentSlide].classList.add('active');
-    
     resetAutoSlide();
 }
 
@@ -94,71 +189,8 @@ function resetAutoSlide() {
     startAutoSlide();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    startAutoSlide();
-    
-    const dropdowns = document.querySelectorAll('.dropdown > a');
-    
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                const parent = dropdown.parentElement;
-                parent.classList.toggle('active');
-            }
-        });
-    });
-});
-
-window.addEventListener('resize', () => {
-    const menu = document.getElementById('menu');
-    if (window.innerWidth > 768) {
-        menu.classList.remove('active');
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-            dropdown.classList.remove('active');
-        });
-    }
-});
-
-// Animation au scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
-document.addEventListener('DOMContentLoaded', () => {
-    const elementsToAnimate = document.querySelectorAll('.card, .subsection h3, .subsection p, .subsection ul, .accordion-item');
-    
-    elementsToAnimate.forEach(el => {
-        el.classList.add('animate');
-        observer.observe(el);
-    });
-});
-
-/* Gestion des listes déroulantes pour les Promos */
-function togglePromoList(button) {
-    // On cible la liste (ul) qui est juste après le bouton cliqué
-    const list = button.nextElementSibling;
-    
-    // On ajoute ou enlève la classe 'active' pour montrer/cacher
-    list.classList.toggle('active');
-    
-    // On change le texte du bouton selon l'état
-    if (list.classList.contains('active')) {
-        button.innerHTML = 'Masquer la liste <i class="fas fa-chevron-up"></i>';
-        button.style.backgroundColor = '#8b1b59'; // Fond bordeaux quand ouvert
-        button.style.color = '#fff';
-    } else {
-        button.innerHTML = 'Voir la liste <i class="fas fa-chevron-down"></i>';
-        button.style.backgroundColor = 'transparent'; // Fond transparent quand fermé
-        button.style.color = '#8b1b59';
-    }
+function handleSubmit(event) {
+    event.preventDefault();
+    alert('Message envoyé !');
+    event.target.reset();
 }
