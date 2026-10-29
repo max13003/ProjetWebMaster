@@ -13,7 +13,7 @@
     <meta property="og:image" content="https://votre-site.com/images/photoPromo2024-2025.jpg"> <meta property="og:url" content="https://votre-site.com/">
     <meta property="og:type" content="website">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -1788,7 +1788,7 @@
     </section>
 
     <section id="entreprises">
-    <div class="container">
+    <div id="partenaire" class="container subsection">
         <h2>Partenaires</h2>
         
         <div class="school-partners-logos">
@@ -1796,7 +1796,7 @@
             <img src="images/Alerion.png" alt="Logo Alerion" title="Partenariat Alerion">
         </div>
 
-        <div id="partenaire" class="subsection">
+        <div class="subsection">
             <div class="card">
         <div class="collaboration-header">
             <h3>DEVENIR PARTENAIRE</h3>
@@ -1929,11 +1929,13 @@
             
             <hr style="margin: 3rem 0; margin-bottom: 0.01rem;">
             
-            <form onsubmit="handleSubmit(event)">
+            <form action="https://formspree.io/f/xykbkbwq" method="POST">
                 <h3 style="text-align: center; margin-bottom: 2rem;">Nous contacter</h3>
-                <input type="text" placeholder="Nom" required>
-                <input type="email" placeholder="Email" required>
-                <textarea rows="5" placeholder="Message" required></textarea>
+                
+                <input type="text" name="nom" placeholder="Nom" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                
                 <button type="submit">Envoyer</button>
             </form>
         </div>
@@ -1998,6 +2000,6 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="main.js?v=3"></script>
 </body>
 </html>

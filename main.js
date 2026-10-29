@@ -188,9 +188,3 @@ function resetAutoSlide() {
     clearInterval(autoSlideInterval);
     startAutoSlide();
 }
-
-function handleSubmit(event) {
-    event.preventDefault();
-    alert('Message envoyé !');
-    event.target.reset();
-}
